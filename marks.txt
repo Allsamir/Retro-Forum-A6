@@ -1,0 +1,18 @@
+*** Main marks-
+
+1.In nav if hover title should be displayed
+2.Banner section search bar funtional // bonus
+3.Let's discuss section left side data has to be shown from api
+4.Let's discuss section right side also functional
+5.Join our forum design purpose
+6.Latest post data comes from api.
+7.Footer in main marks
+8. In Api data is active then green if not active than red
+
+*** Bonus marks
+8. Search bar has to be funtional and search by category and display data
+9.A loding spinner has to shown
+10. If date and designation is missing then No publish date and Unknwon
+11.Minimum 8 commits in github
+12.Change the title and responsive for mobile device
+
