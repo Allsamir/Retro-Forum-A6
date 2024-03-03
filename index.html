@@ -1,23 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta http-equiv="X-UA-Compatible" content="IE=7">
-          <!--  -->
-          <title>Samir's Forum</title>
-          <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/6456/6456117.png" type="image/x-icon">
-          <!--  -->
-          <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-          <script src="https://cdn.tailwindcss.com"></script>
-          <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <!--  -->
+  <title>Samir's Forum</title>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/6456/6456117.png" type="image/x-icon">
+  <!--  -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
 
 </head>
+
 <body>
 
+  <header class="container mx-auto px-4 py-8">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+          </div>
+          <ul tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 items-center space-y-4 bg-white">
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame.svg" alt=""></a></li>
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame (1).svg" alt=""></a></li>
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame (2).svg" alt=""></a></li>
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame (3).svg" alt=""></a></li>
+          </ul>
+        </div>
+        <a class="md:text-4xl text-2xl text-black mulish-font font-black">Samir's Forum</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-center hidden lg:flex mr-6">
+          <ul class="menu menu-horizontal gap-6 px-1">
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame.svg" alt=""></a></li>
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame (1).svg" alt=""></a></li>
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame (2).svg" alt=""></a></li>
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+                class="px-5 py-[1.2rem] "><img src="images/Frame (3).svg" alt=""></a></li>
+          </ul>
+        </div>
+        <a class="bg-buttonBg text-white rounded-[3.125rem] mulish-font xl:text-xl text-lg font-bold border-none px-10 py-4">Sing
+          In</a>
+      </div>
+    </div>
+    <!-- Banner section -->
+    <section class="banner bg-bannerBg mt-12 rounded-[2rem]">
+
+      <div class="bg-[url('./images/bgbanner.png')] bg-no-repeat bg-cover bg-bottom ">
+
+        <div class="flex gap-20 main-content md:px-24 md:py-24 p-8 flex-col lg:flex-row">
+
+          <div class="banner-content mulish-font">
+            <h1 class="text-6xl text-white font-black leading-[5.375rem]">Welcome to the <br><span class="text-buttonBg">Samir's</span> Forum</h1>
+            <p class="text-xl font-normal text-white leading-9 py-8">Share your favorite opinion and win and wp <br>forum coffee mug!</p>
+              <div class="join w-full">
+                <input class="input input-bordered join-item bg-white w-full" placeholder="Search here anything"/>
+                <button class="btn join-item rounded-full bg-buttonBg text-white border-none text-xl font-bold">Search</button>
+              </div>
+          </div>
+          <div class="show-status flex-1 p-12 bg-white text-black rounded-[2rem]">
+            <div class="overflow-x-auto">
+              <table class="table text-xl mulish-font font-normal">
+                <!-- head -->
+                <tbody>
+                  <!-- row 1 -->
+                  <tr>
+                    <td>Registered Users</td>
+                    <td>01</td>
+                  </tr>
+                  <!-- row 2 -->
+                  <tr>
+                    <td>Forum</td>
+                    <td>05</td>
+                  </tr>
+                  <tr>
+                    <td>Topics</td>
+                    <td>01</td>
+                  </tr>
+                  <tr>
+                    <td>Replies</td>
+                    <td>01</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  </header>
+  <main></main>
+  <footer></footer>
 
 
-
-<script src="./js/index.js"></script>         
+  <script src="./js/index.js"></script>
 </body>
+
 </html>
