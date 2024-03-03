@@ -115,10 +115,11 @@
         <p class="text-lg font-normal pt-6">Yes, you can run unit tests and view the results directly within the app. The <br>integrated testing features allow for a streamlined .</p>
       </div>
 
-      <div class="dynamic-content-section flex flex-col md:flex-row gap-6 mt-12">
+      <div class="dynamic-content-section flex flex-col lg:flex-row gap-6 mt-12">
 
-        <div class="posts w-3/5">
+        <div class="posts lg:w-3/5 flex-1">
           <div id="posts-section" class="space-y-6"></div>
+          <div class="text-center"><span id="spinner" class="loading loading-spinner loading-lg bg-bannerBg"></span></div>
         </div>
 
         <div class="title flex-1">
@@ -126,7 +127,7 @@
 
             <div class="text-section flex items-center justify-between">
               <span class="text-bannerBg font-bold text-xl">Title</span>
-              <span class="flex"><img src="images/Frame.png" alt=""> Mark as readed(<span>0</span>)</span>
+              <span class="flex"><img src="images/Frame.png" alt=""> Mark as readed(<span id="readed">0</span>)</span>
             </div>
 
           </div>
@@ -139,7 +140,7 @@
   <footer></footer>
 
 
-  <script src="./js/index.js"></script>
+<script src="./js/index.js"></script>
 </body>
 
 </html>
