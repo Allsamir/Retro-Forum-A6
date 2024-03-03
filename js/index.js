@@ -6,6 +6,7 @@ tailwind.config = {
             navbarButtonBorder: 'rgba(3, 7, 18, 0.10)',
             navbarButtonBg: 'rgba(18, 19, 45, 0.03)',
             bannerBg: '#12132D',
+            titleSectionBg: 'rgba(18, 19, 45, 0.05)'
           }
         }
       }
