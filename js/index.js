@@ -41,7 +41,7 @@ tailwind.config = {
                     posts.map(post => {
                               const {id,category,image,isActive,title,description,comment_count,view_count,posted_time,author:{name}} = post;
                               const div = document.createElement('div');
-                              const newTitle = title.includes("'") ? title.split("'").join('') : title; // removing ' from a title because it is causing error in showPostTitle function
+                              const newTitle = title.includes("'") ? title.split("'").join('') : title;+ // removing ' from a title because it is causing error in showPostTitle function
                               div.classList.add('p-10', 'mulish-font', 'bg-postBg', 'hover:bg-post_hover', 'flex', 'gap-6', 'rounded-2xl')
                               div.innerHTML = `
                               <div class="flex-1 relative">
@@ -78,7 +78,6 @@ tailwind.config = {
     }
 
     const showPostTitle = (title, view_count) => {
-          console.log(title)
           try {     
                     postCount++;
                     const div = document.createElement('div');
