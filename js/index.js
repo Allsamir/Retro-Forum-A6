@@ -28,7 +28,9 @@ tailwind.config = {
     const latestPostContainer = document.getElementById('latest-posts-container');
     const titleSection = document.getElementById('title-section');
     const readed = document.getElementById('readed');
+    const searchBar = document.getElementById('search-bar');
     const year = document.getElementById('year');
+    const modal1 = document.getElementById('my_modal_3');
     let postCount = 0;
     let showYear = new Date().getFullYear();
 
@@ -52,6 +54,34 @@ tailwind.config = {
       } catch (err) {
             console.error("Error:", err);
       }
+    }
+
+    const loadPostByCategory = async (category) => {
+      const postURLByCategory = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`;
+      try {
+            const response = await fetch(postURLByCategory);
+            const realData = await response.json();
+            console.log(realData)
+            realData.message === 'successfully fetched the posts' ? displayDataToUI(realData.posts) : displayNoPostFound(realData.message);
+      } catch (err) {
+            console.log("Error:", err)
+      }
+    }
+
+    const  handleSearch = () =>  {
+      if (searchBar.value !== '') {
+            loadPostByCategory(searchBar.value.toLowerCase());
+            searchBar.value = '';
+      } else {
+            modal1.showModal();
+      }
+    }
+
+    const displayNoPostFound = (errorMessage) => {
+      modal1.showModal();
+      allPostSection.innerHTML = `
+      <div class="text-center text-2xl text-bannerBg font-bold mulish-font">${errorMessage}</div>
+      `
     }
  
     const displayDataToUI = (posts) => {
