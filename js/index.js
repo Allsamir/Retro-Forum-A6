@@ -12,6 +12,7 @@ tailwind.config = {
             postPColor: 'rgba(18, 19, 45, 0.60)',
             borderPost: 'rgba(18, 19, 45, 0.25)',
             latestPostBorder: 'rgba(18, 19, 45, 0.15)',
+            footerBg: '#F5F5F6',
             activeBg: '#10B981',
             inActiveBg: '#FF3434'
           }
@@ -27,7 +28,11 @@ tailwind.config = {
     const latestPostContainer = document.getElementById('latest-posts-container');
     const titleSection = document.getElementById('title-section');
     const readed = document.getElementById('readed');
+    const year = document.getElementById('year');
     let postCount = 0;
+    let showYear = new Date().getFullYear();
+
+    year.innerText = showYear;
 
     const loadDataFromApi = async () => {
           try {
@@ -112,6 +117,8 @@ tailwind.config = {
             <img src="${cover_image}" class="w-full rounded-3xl"/>
             <div class="flex items-center gap-4 mt-7 "><span><img src="../images/Frame111.svg"/></span> <span>${posted_date || "No Publish Date"}</span></div>
             <h1 class="text-bannerBg font-extrabold text-lg py-2">${title}</h1>
+            <p class="text-base text-bannerBg font-normal">${description}</p>
+            <div class="flex items-center mt-6 gap-4"><img src="${profile_image}" class="w-[2.75rem] h-[2.75rem] rounded-[2.75rem]"/><div><h6 class="text-base font-bold text-bannerBg">${name}</h6><p class="text-bannerBg">${designation || "Unknown"}</p></div></div>
             `
             latestPostContainer.appendChild(div);
       })
