@@ -11,6 +11,7 @@ tailwind.config = {
             postBg: '#F3F3F5',
             postPColor: 'rgba(18, 19, 45, 0.60)',
             borderPost: 'rgba(18, 19, 45, 0.25)',
+            latestPostBorder: 'rgba(18, 19, 45, 0.15)',
             activeBg: '#10B981',
             inActiveBg: '#FF3434'
           }
@@ -19,8 +20,11 @@ tailwind.config = {
     }
 
     const allPostURL = 'https://openapi.programming-hero.com/api/retro-forum/posts';
+    const latestPostURL = 'https://openapi.programming-hero.com/api/retro-forum/latest-posts';
     const spinner = document.getElementById('spinner');
+    const spinner2 = document.getElementById('spinner-2');
     const allPostSection = document.getElementById('posts-section');
+    const latestPostContainer = document.getElementById('latest-posts-container');
     const titleSection = document.getElementById('title-section');
     const readed = document.getElementById('readed');
     let postCount = 0;
@@ -35,18 +39,28 @@ tailwind.config = {
           }    
     }
 
+    const loadLatestPosts = async () => {
+      try {
+            const response = await fetch(latestPostURL);
+            const realData = await response.json();
+            displayLatestPostToUI(realData);
+      } catch (err) {
+            console.error("Error:", err);
+      }
+    }
+ 
     const displayDataToUI = (posts) => {
           try {
                     allPostSection.innerHTML = '';
                     posts.map(post => {
                               const {id,category,image,isActive,title,description,comment_count,view_count,posted_time,author:{name}} = post;
                               const div = document.createElement('div');
-                              const newTitle = title.includes("'") ? title.split("'").join('') : title;+ // removing ' from a title because it is causing error in showPostTitle function
-                              div.classList.add('p-10', 'mulish-font', 'bg-postBg', 'hover:bg-post_hover', 'flex', 'gap-6', 'rounded-2xl')
+                              const newTitle = title.includes("'") ? title.split("'").join('') : title; // removing ' from a title because it is causing error in showPostTitle function
+                              div.classList.add('p-10', 'mulish-font', 'bg-postBg', 'hover:bg-post_hover', 'flex', 'gap-6', 'rounded-2xl', 'md:flex-row', 'flex-col')
                               div.innerHTML = `
                               <div class="flex-1 relative">
                               <img src="${image}" class="w-20 h-20 rounded-2xl"/>
-                              <div class="w-[1.16669rem] h-[1.16669rem] rounded-[6.25rem] bg-${isActive ? 'activeBg' : 'inActiveBg'} absolute z-10 top-[-0.4rem] right-[1.2rem]"></div>
+                              <div class="w-[1.16669rem] h-[1.16669rem] rounded-[6.25rem] bg-${isActive ? 'activeBg' : 'inActiveBg'} absolute z-10 top-[-0.4rem] md:right-[1.2rem]"></div>
                               </div>
                               <div class="w-4/5">
                               <div><span class="text-[0.875rem] font-medium text-bannerBg inline-block"> #${category}</span> <span class="inline-block pl-6 text-[0.875rem] font-medium text-bannerBg">Author:${name}</span></div>
@@ -73,10 +87,6 @@ tailwind.config = {
           }
     }
 
-    const hideSpinner = () => {
-          spinner.classList.add('hidden')
-    }
-
     const showPostTitle = (title, view_count) => {
           try {     
                     postCount++;
@@ -92,5 +102,26 @@ tailwind.config = {
                     console.error("Error:", err);
           }
     }     
-    
+
+    const displayLatestPostToUI = (latestPosts) => {
+      latestPosts.map(post => {
+            const {cover_image, description, title, profile_image, author:{name, posted_date, designation}} = post;
+            const div = document.createElement('div');
+            div.classList.add('rounded-3xl', 'border', 'border-solid', 'border-latestPostBorder', 'bg-white', 'p-6', 'mulish-font');
+            div.innerHTML = `
+            <img src="${cover_image}" class="w-full rounded-3xl"/>
+            <div class="flex items-center gap-4 mt-7 "><span><img src="../images/Frame111.svg"/></span> <span>${posted_date || "No Publish Date"}</span></div>
+            <h1 class="text-bannerBg font-extrabold text-lg py-2">${title}</h1>
+            `
+            latestPostContainer.appendChild(div);
+      })
+      hideSpinner();
+    }
+
+     const hideSpinner = () => {
+      spinner.classList.add('hidden');
+      spinner2.classList.add('hidden');
+    }
+     
     loadDataFromApi();
+    loadLatestPosts();

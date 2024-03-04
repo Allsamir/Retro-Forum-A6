@@ -29,13 +29,13 @@
           </div>
           <ul tabindex="0"
             class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 items-center space-y-4 bg-white">
-            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a title="Home"
                 class="px-5 py-[1.2rem] "><img src="images/Frame.svg" alt=""></a></li>
-            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a title="Blog"
                 class="px-5 py-[1.2rem] "><img src="images/Frame (1).svg" alt=""></a></li>
-            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a title="Friends"
                 class="px-5 py-[1.2rem] "><img src="images/Frame (2).svg" alt=""></a></li>
-            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a
+            <li class="rounded-[3rem] border border-navbarButtonBorder border-solid bg-navbarButtonBg"><a title="More"
                 class="px-5 py-[1.2rem] "><img src="images/Frame (3).svg" alt=""></a></li>
           </ul>
         </div>
@@ -54,7 +54,7 @@
                 class="px-5 py-[1.2rem] "><img src="images/Frame (3).svg" alt=""></a></li>
           </ul>
         </div>
-        <a class="bg-buttonBg text-white rounded-[3.125rem] mulish-font xl:text-xl text-lg font-bold border-none px-10 py-4">Sing
+        <a class="bg-buttonBg text-white rounded-[3.125rem] mulish-font xl:text-xl text-lg font-bold border-none btn btn-lg" href="index.html ">Sing
           In</a>
       </div>
     </div>
@@ -141,7 +141,7 @@
     <section class="join-our-team rounded-[2rem] bg-bannerBg mt-24 ">
       <div class="flex flex-col lg:flex-row items-center">
 
-        <div class="text-section mulish-font lg:w-3/5 w-full pl-[5.5rem]">
+        <div class="text-section mulish-font lg:w-3/5 w-full lg:pl-[5.5rem] lg:pt-0 pt-20 p-8">
           <h1 class="text-4xl font-black text-white">Join Our Forum</h1>
           <p class="text-white text-lg font-normal pt-6 pb-10">Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br>run unit tests and view the results directly within the app.</p>
           <button class="rounded-[3.125rem] bg-buttonBg btn btn-lg text-white font-bold text-xl">Register Now</button>
@@ -152,8 +152,19 @@
       </div>
     </section>
 
-    <section class="latest-post-section">
+    <section class="latest-post-section mt-24">
       
+      <div class="latest-post-section-heading text-center mulish-font">
+        <h1 class="text-bannerBg font-black text-4xl">Latest Posts</h1>
+        <p class="text-bannerBg font-normal text-lg pt-6">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+      </div>
+
+      <div id="latest-posts-container" class="mt-12 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+
+      </div>
+      <div class="text-center"><span id="spinner-2" class="loading loading-spinner loading-lg bg-bannerBg"></span></div>
+
+
     </section>
   </main>
   <footer></footer>
